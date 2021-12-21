@@ -4,6 +4,7 @@ exports[`decaffeinate options supports all of them 1`] = `
 Array [
   " -h",
   " --help",
+  " --use-cs2",
   " --modernize-js",
   " --literate",
   " --disable-suggestion-comment",
@@ -20,8 +21,8 @@ Array [
   " --loose-for-of",
   " --loose-includes",
   " --loose-comparison-negation",
-  " --disable-babel-constructor-workaround",
   " --disallow-invalid-constructors",
+  " --optional-chaining",
 ]
 `;
 
@@ -36,13 +37,13 @@ const React = require('react');
 const testConstant = 'foo';
 
 module.exports = React.createClass({
-    render() {
-        return (
-            <div className=\\"hello\\">
-                <div>Hello</div>
-            </div>
-        );
-    },
+  render() {
+    return (
+      <div className=\\"hello\\">
+        <div>Hello</div>
+      </div>
+    );
+  },
 });
 "
 `;
@@ -71,24 +72,39 @@ module.exports = React.createClass({
 
 exports[`prettier options supports all of them 1`] = `
 Array [
+  " -c",
+  " --check",
+  " --list-different",
   " -l",
   " --list-different",
+  " --check",
+  " -w",
   " --write",
+  " --arrow-parens",
+  " --bracket-same-line",
   " --no-bracket-spacing",
-  " --jsx-bracket-same-line",
+  " --embedded-language-formatting",
+  " --end-of-line",
+  " --html-whitespace-sensitivity",
+  " --jsx-single-quote",
   " --parser",
   " --print-width",
-  " --no-prose-wrap",
+  " --prose-wrap",
+  " --quote-props",
   " --no-semi",
   " --single-quote",
   " --tab-width",
   " --trailing-comma",
   " --use-tabs",
+  " --vue-indent-script-and-style",
   " --config",
   " --no-config",
   " --config-precedence",
+  " --no-editorconfig",
   " --find-config-path",
   " --ignore-path",
+  " --plugin",
+  " --plugin-search-dir",
   " --with-node-modules",
   " --cursor-offset",
   " --range-start",
@@ -99,13 +115,17 @@ Array [
   " --range-start",
   " --cursor-offset",
   " --no-color",
+  " --no-error-on-unmatched-pattern",
+  " --file-info",
+  " --ignore-path",
   " -h",
   " --help",
   " --help",
+  " -u",
+  " --ignore-unknown",
   " --insert-pragma",
   " --loglevel",
   " --require-pragma",
-  " --stdin",
   " --stdin-filepath",
   " --support-info",
   " -v",
