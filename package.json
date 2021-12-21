@@ -1,8 +1,8 @@
 {
-  "name": "depercolator",
+  "name": "@airtv/depercolator",
   "version": "0.5.2",
   "description": "Converts coffeescript to idiomatic javascript (supports JSX)",
-  "homepage": "https://github.com/bugsnag/depercolator",
+  "homepage": "https://github.com/airtv/depercolator",
   "scripts": {
     "test": "jest",
     "pretest": "yarn run build",
@@ -14,7 +14,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/bugsnag/depercolator.git"
+    "url": "git+https://github.com/airtv/depercolator.git"
+  },
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com/airtv"
   },
   "license": "MIT",
   "bin": {
