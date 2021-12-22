@@ -42,6 +42,14 @@ const decaffeinateOptions = [
     '--disallow-invalid-constructors',
     'Give an error when constructors use this before super or omit the super call in a subclass.',
   ],
+  [
+    '--use-cs2',
+    'Treat the input as CoffeeScript 2 code',
+  ],
+  [
+    '--use-js-modules',
+    'Convert require and module.exports to import and export',
+  ],
 ];
 
 const prettierOptions = [
@@ -60,11 +68,18 @@ const prettierOptions = [
 function getOptions(array) {
   const options = {};
   array.forEach(([flag]) => {
-    const key = camelCase(flag.replace(' <int>', ''));
-    let value = program[key];
+    let key = camelCase(flag.replace(' <int>', ''));
+    let value = program.opts()[key];
     if (/<int>/.test(flag) && typeof value === 'string') {
       value = parseInt(value, 10);
     }
+
+    if (key === 'useCs2') {
+      key = 'useCS2';
+    } else if (key === 'useJsModules') {
+      key = 'useJSModules';
+    }
+
     options[key] = value;
   });
 
@@ -113,7 +128,9 @@ function processFile(file) {
     }).code;
   } catch (e) {
     renderError({ label: 'Babel error', message: e });
-    process.exit(1);
+
+    // This will allow the file to be created
+    // process.exit(1);
   }
 
   // format using prettier and eslint

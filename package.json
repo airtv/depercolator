@@ -1,6 +1,6 @@
 {
   "name": "@airtv/depercolator",
-  "version": "0.5.2",
+  "version": "0.5.5",
   "description": "Converts coffeescript to idiomatic javascript (supports JSX)",
   "homepage": "https://github.com/airtv/depercolator",
   "scripts": {
